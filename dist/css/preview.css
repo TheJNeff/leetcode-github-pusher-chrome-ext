@@ -1,0 +1,168 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+
+.badge-easy   { background: rgba(0,184,163,0.15); color: var(--easy); }
+.badge-medium { background: rgba(255,161,22,0.15); color: var(--medium); }
+.badge-hard   { background: rgba(239,71,67,0.15);  color: var(--hard); }
+.badge-lang   { background: rgba(255,255,255,0.06); color: var(--muted); }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+
+.topbar-left { display: flex; flex-direction: column; gap: 6px; }
+
+.problem-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.badges { display: flex; align-items: center; gap: 6px; }
+
+.topbar-right { display: flex; align-items: center; gap: 24px; }
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-value.na { font-size: 15px; color: var(--muted); }
+.stat-sub { font-size: 11px; color: var(--muted); }
+
+.file-area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  background: var(--surface);
+  flex-shrink: 0;
+}
+
+.tab {
+  padding: 10px 18px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  transition: color 0.15s;
+  margin-bottom: -1px;
+}
+
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.file-path-bar {
+  padding: 8px 32px;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.file-path-bar span { color: var(--accent); }
+
+.file-content {
+  flex: 1;
+  overflow: auto;
+  padding: 24px 32px;
+}
+
+pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 32px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+
+.action-bar .btn { padding: 9px 20px; }
+
+.btn-secondary { background: var(--surface2); }
+
+.status-msg { font-size: 13px; padding: 6px 12px; }
+
+.markdown-body { color: var(--text); line-height: 1.7; }
+.markdown-body h1 { font-size: 1.6em; font-weight: 700; margin: 0 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.markdown-body h2 { font-size: 1.2em; font-weight: 600; margin: 24px 0 10px; }
+.markdown-body h3 { font-size: 1em; font-weight: 600; margin: 18px 0 8px; }
+.markdown-body p { margin: 0 0 12px; }
+.markdown-body a { color: var(--accent); text-decoration: none; }
+.markdown-body a:hover { text-decoration: underline; }
+.markdown-body strong { font-weight: 600; color: var(--text); }
+.markdown-body table { border-collapse: collapse; margin: 12px 0; }
+.markdown-body th, .markdown-body td { padding: 6px 16px; border: 1px solid var(--border); font-size: 13px; }
+.markdown-body th { background: var(--surface2); font-weight: 600; }
+.markdown-body pre { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 16px; overflow-x: auto; margin: 12px 0; }
+.markdown-body code { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+.markdown-body :not(pre) > code { background: var(--surface2); padding: 2px 5px; border-radius: 3px; font-size: 12px; }
+
+.page-message {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 14px;
+}
