@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LeetCode GitHub Pusher — Settings</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/options.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+      LeetCode GitHub Pusher
+    </div>
+    <div class="subtitle">Configure your GitHub integration</div>
+
+    <div class="section">
+      <div class="section-title">GitHub Settings</div>
+
+      <div class="field">
+        <label for="github-token">Personal Access Token</label>
+        <div class="field-hint">
+          Generate a token at <a href="https://github.com/settings/tokens/new" target="_blank">GitHub → Settings → Developer Settings → Personal Access Tokens</a>.
+          Required scopes:
+          <div class="scope-list">
+            <span class="scope-tag">repo</span>
+          </div>
+        </div>
+        <input type="password" id="github-token" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off" />
+      </div>
+
+      <div class="field">
+        <label for="github-repo">Repository</label>
+        <div class="field-hint">The repo where solutions will be pushed. Format: <code style="color:var(--accent)">username/repo-name</code></div>
+        <input type="text" id="github-repo" placeholder="yourusername/leetcode-solutions" />
+      </div>
+
+      <div class="field">
+        <label for="github-branch">Branch</label>
+        <div class="field-hint">The branch to commit to. Defaults to <code style="color:var(--accent)">main</code>.</div>
+        <input type="text" id="github-branch" placeholder="main" />
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="save-btn">Save Settings</button>
+      <span id="save-status"></span>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

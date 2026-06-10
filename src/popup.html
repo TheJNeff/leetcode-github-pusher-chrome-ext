@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeetCode GitHub Pusher</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+      LC → GitHub
+    </div>
+    <button class="settings-btn" id="open-options" title="Settings">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Empty state -->
+  <div id="empty-state">
+    <div class="icon">🎯</div>
+    <h3>No solution staged yet</h3>
+    <p>Click <strong>Push to GitHub</strong> on a LeetCode problem<br>after getting an accepted submission.</p>
+  </div>
+
+  <!-- Summary state: problem name + stats + 3 buttons -->
+  <div id="summary-state">
+    <div class="problem-title" id="sum-title"></div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Runtime</div>
+        <div class="stat-value" id="sum-runtime-val"></div>
+        <div class="stat-sub" id="sum-runtime-pct"></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Memory</div>
+        <div class="stat-value" id="sum-memory-val"></div>
+        <div class="stat-sub" id="sum-memory-pct"></div>
+      </div>
+    </div>
+    <div class="field-label">Commit message:</div>
+    <textarea id="commit-msg" class="commit-msg-input" rows="3" spellcheck="false"></textarea>
+    <div class="field-label">Push to GitHub to run the following commands:</div>
+    <pre class="git-preview" id="git-preview"></pre>
+    <button class="btn btn-primary btn-full" id="push-btn">
+      <span class="spinner" id="spinner"></span>
+      <span id="push-label">Push to GitHub</span>
+    </button>
+    <div class="actions-2">
+      <button class="btn btn-secondary" id="discard-btn">Discard</button>
+      <button class="btn btn-secondary" id="review-btn">Review</button>
+    </div>
+    <div class="status-msg" id="status"></div>
+  </div>
+
+
+  <script src="popup.js"></script>
+</body>
+</html>

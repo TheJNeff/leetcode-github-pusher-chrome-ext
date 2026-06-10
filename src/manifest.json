@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode GitHub Pusher",
+  "version": "1.0.0",
+  "description": "Automatically push your LeetCode solutions to GitHub with runtime and memory stats.",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://api.github.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["page-bridge.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LeetCode GitHub Pusher"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}
